@@ -2,7 +2,7 @@ import React from 'react';
 import { drum } from '../music/drum.js';
 import CrearColumnas from './CrearColumnas.js';
 
-const CrearTablero = () => {
+const CrearTablero = ({table}) => {
 
     const n = 16;
     var num = 1;
@@ -13,7 +13,11 @@ const CrearTablero = () => {
             {[...Array(n)].map(() => 
                 <div style={{textAlign: "center"}}>  
                     <p key={num}>{num++}</p>
-                    <CrearColumnas num = {num} key = {num}/>
+                    <CrearColumnas 
+                        table = {table}
+                        num = {num} 
+                        key = {num}
+                    />
                 </div>
             )}
         </div>
